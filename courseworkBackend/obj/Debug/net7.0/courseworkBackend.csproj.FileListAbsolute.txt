@@ -6,6 +6,9 @@
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/courseworkBackend.dll
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/courseworkBackend.pdb
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.OpenApi.dll
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -31,3 +34,10 @@
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/obj/Debug/net7.0/courseworkBackend.pdb
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/obj/Debug/net7.0/courseworkBackend.genruntimeconfig.cache
 /Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/obj/Debug/net7.0/ref/courseworkBackend.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
