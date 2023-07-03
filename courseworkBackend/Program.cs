@@ -48,7 +48,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // Add Swagger services
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "Fitness Tracker API", Version = "v1" });
 
     var securityScheme = new OpenApiSecurityScheme
     {
