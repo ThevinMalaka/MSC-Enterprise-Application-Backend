@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -40,6 +41,7 @@ namespace courseworkBackend.Controllers
 
         // Action to get all users
         [HttpGet("all")]
+        [Authorize]
         public IActionResult GetAll()
         {
             List<UserModel> users = _context.Users.ToList();
