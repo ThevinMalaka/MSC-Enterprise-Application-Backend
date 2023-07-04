@@ -2,12 +2,19 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkBackend/Controllers/UserController.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.courseworkBackend PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkBackend/Program.cs">
     <Files>
-      <File FileName="courseworkBackend/DataStore/FitnessDbContext.cs" Line="14" Column="38" />
+      <File FileName="courseworkBackend/DataStore/FitnessDbContext.cs" Line="16" Column="1" />
       <File FileName="courseworkBackend/Entities/UserModel.cs" Line="4" Column="24" />
       <File FileName="courseworkBackend/Controllers/UserController.cs" Line="44" Column="13" />
-      <File FileName="courseworkBackend/Program.cs" Line="10" Column="34" />
+      <File FileName="courseworkBackend/Program.cs" Line="102" Column="6" />
+      <File FileName="courseworkBackend/Entities/WorkoutPlanModel.cs" Line="4" Column="31" />
+      <File FileName="courseworkBackend/Services/WorkoutPlanService.cs" Line="7" Column="33" />
+      <File FileName="courseworkBackend/Controllers/WorkoutPlanController.cs" Line="14" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,15 +22,13 @@
           <Node name="courseworkBackend" expanded="True">
             <Node name="courseworkBackend" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="DataStore" expanded="True" />
               <Node name="Entities" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.courseworkBackend PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
