@@ -12,6 +12,7 @@ namespace courseworkBackend.DataStore
         }
 
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<WorkoutPlanModel> WorkoutPlans { get; set; }
     }
 }
 

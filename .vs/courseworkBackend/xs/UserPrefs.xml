@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{246832E7-1215-4A13-B250-3FCF3F0512F4}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkBackend/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkBackend/Controllers/UserController.cs">
     <Files>
-      <File FileName="courseworkBackend/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
-      <File FileName="courseworkBackend/Program.cs" Line="24" Column="1" />
+      <File FileName="courseworkBackend/DataStore/FitnessDbContext.cs" Line="14" Column="38" />
+      <File FileName="courseworkBackend/Entities/UserModel.cs" Line="4" Column="24" />
+      <File FileName="courseworkBackend/Controllers/UserController.cs" Line="44" Column="13" />
+      <File FileName="courseworkBackend/Program.cs" Line="10" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,22 +15,15 @@
           <Node name="courseworkBackend" expanded="True">
             <Node name="courseworkBackend" expanded="True">
               <Node name="Controllers" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="courseworkBackend" expanded="True">
-            <Node name="courseworkBackend" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Entities" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.courseworkBackend PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

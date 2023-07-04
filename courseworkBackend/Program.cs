@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using courseworkBackend.DataStore;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using courseworkBackend.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +74,37 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+// --------------------------------------------------------
+// Seed default data
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var dbContext = services.GetRequiredService<FitnessDbContext>();
+    dbContext.Database.EnsureCreated();
+
+    // Seed data if the table is empty
+    if (!dbContext.Users.Any())
+    {
+        dbContext.Users.AddRange(
+            new UserModel { Id = 1, Name = "Thevin Malaka", Email = "thevinmalaka@gmail.com", Password = "aaa", CurrentHeight = 1.8, CurrentWeight = 80.0, DateOfBirth = new DateTime(1996, 12, 10) }
+        );
+    }
+
+    if (!dbContext.WorkoutPlans.Any())
+    {
+        dbContext.WorkoutPlans.AddRange(
+            new WorkoutPlanModel { Id = 1, Name = "Plan 1", Description = "Desc 1", Difficulty = "Beginner", Duration = "30 min", MET = 5.5 },
+            new WorkoutPlanModel { Id = 2, Name = "Plan 2", Description = "Desc 2", Difficulty = "Intermediate", Duration = "45 min", MET = 6.5 },
+            new WorkoutPlanModel { Id = 3, Name = "Plan 3", Description = "Desc 3", Difficulty = "Advanced", Duration = "60 min", MET = 7.5 },
+            new WorkoutPlanModel { Id = 4, Name = "Plan 4", Description = "Desc 4", Difficulty = "Expert", Duration = "30 min", MET = 5.5 }
+        );
+    }
+
+    dbContext.SaveChanges();
+}
+// --------------------------------------------------------
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
