@@ -103,7 +103,7 @@ using (var scope = app.Services.CreateScope())
     if (!dbContext.Users.Any())
     {
         dbContext.Users.AddRange(
-            new UserModel { Id = 1, Name = "Thevin Malaka", Email = "thevinmalaka@gmail.com", Password = "aaa", Height = 156, Weight = 80.0, DateOfBirth = new DateTime(1996, 12, 10) }
+            new UserModel { Id = 1, Name = "Thevin Malaka", Email = "thevinmalaka@gmail.com", Password = "Abc@12345", Height = 156, Weight = 80.0, DateOfBirth = new DateTime(1996, 12, 10) }
         );
     }
 

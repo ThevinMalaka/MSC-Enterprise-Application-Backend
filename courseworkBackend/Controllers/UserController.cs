@@ -41,8 +41,8 @@ namespace courseworkBackend.Controllers
             _context.SaveChanges();
             return Ok(user);  // Return the created user with the generated ID
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            // _context.Users.Add(user);
+            // await _context.SaveChangesAsync();
 
             //create a new weight log
              var weightLogResult = await _weightLogService.CreateWeightLogAsync(
