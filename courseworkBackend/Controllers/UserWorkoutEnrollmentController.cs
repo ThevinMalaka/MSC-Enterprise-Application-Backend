@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using courseworkBackend.Services;
 using courseworkBackend.Entities;
 using courseworkBackend.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,6 +27,7 @@ namespace courseworkBackend.Controllers
 
 
         [HttpGet("user/{userId}")]
+        [Authorize]
         public async Task<List<UserWorkoutEnrollmentModel>> Get(int userId)
         {
            //get all user workout enrollments from the database
@@ -33,6 +35,7 @@ namespace courseworkBackend.Controllers
         }
 
         [HttpGet("single/{id}")]
+        [Authorize]
         public async Task<UserWorkoutEnrollmentModel> GetEnrollmentById(int id)
         {
            //get all user workout enrollments from the database
@@ -41,6 +44,7 @@ namespace courseworkBackend.Controllers
 
         //add a new user workout enrollment
         [HttpPost("single")]
+        [Authorize]
         public async Task<ActionResult<UserWorkoutEnrollmentModel>> Post(UserWorkoutEnrollmentCreateDTO userWorkoutEnrollment)
         {
             //    //create a new user workout enrollment
@@ -61,6 +65,7 @@ namespace courseworkBackend.Controllers
 
         //update a user workout enrollment
         [HttpPut("single")]
+        [Authorize]
         public async Task<ActionResult<UserWorkoutEnrollmentModel>> Put(UserWorkoutEnrollmentUpdateDTO userWorkoutEnrollment)
         {
            //update a user workout enrollment
@@ -71,6 +76,7 @@ namespace courseworkBackend.Controllers
 
          //complete single day workout
         [HttpPut("complete/{id}")]
+        [Authorize]
         public async Task<ActionResult<UserWorkoutEnrollmentModel>> CompleteDay(int id)
         {
             //complete a single day workout
@@ -78,41 +84,6 @@ namespace courseworkBackend.Controllers
             return result; 
             
         }
-
-        //-----------------
-
-        // [HttpGet("{id}")]
-        // public async Task<IActionResult> GetUserWorkoutEnrollment(int id)
-        // {
-        //     var userWorkoutEnrollment = await _userWorkoutEnrollmentService.GetUserWorkoutEnrollmentByIdAsync(id);
-
-        //     if (userWorkoutEnrollment == null)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return Ok(userWorkoutEnrollment);
-        // }
-
-        // [HttpGet("user/{userId}")]
-        // public async Task<IActionResult> GetUserWorkoutEnrollments(int userId)
-        // {
-        //     var userWorkoutEnrollments = await _userWorkoutEnrollmentService.GetUserWorkoutEnrollmentsByUserIdAsync(userId);
-
-        //     if (userWorkoutEnrollments == null)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return Ok(userWorkoutEnrollments);
-        // }
-
-        // [HttpPost]
-        // public async Task<IActionResult> CreateUserWorkoutEnrollment(UserWorkoutEnrollmentModel userWorkoutEnrollment)
-        // {
-        //     var createdUserWorkoutEnrollment = await _userWorkoutEnrollmentService.CreateUserWorkoutEnrollmentAsync(userWorkoutEnrollment);
-        //     return CreatedAtAction(nameof(GetUserWorkoutEnrollment), new { id = createdUserWorkoutEnrollment.Id }, createdUserWorkoutEnrollment);
-        // }
     }
 }
 

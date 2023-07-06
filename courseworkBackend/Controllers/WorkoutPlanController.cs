@@ -16,7 +16,6 @@ namespace courseworkBackend.Controllers
    
     [Route("api/[controller]")]
     [ApiController]
-    // [Authorize]
     public class WorkoutPlanController : ControllerBase
     {
         private readonly WorkoutPlanService _workoutPlanService;
@@ -28,24 +27,28 @@ namespace courseworkBackend.Controllers
 
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<WorkoutPlanDTO>>> GetWorkoutPlansAsync()
         {
             return await _workoutPlanService.GetWorkoutPlansAsync();
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<WorkoutPlanDTO>> GetWorkoutPlanByIdAsync(int id)
         {
             return await _workoutPlanService.GetWorkoutPlanWithWorkoutsByIdAsync(id);
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<WorkoutPlanDTO>> CreateWorkoutPlanAsync(WorkoutPlanModel workoutPlan)
         {
             return await _workoutPlanService.CreateWorkoutPlanAsync(workoutPlan);
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<ActionResult<WorkoutPlanDTO>> UpdateWorkoutPlanAsync(int id, WorkoutPlanModel workoutPlan)
         {
             if (id != workoutPlan.Id)
@@ -57,6 +60,7 @@ namespace courseworkBackend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<ActionResult<WorkoutPlanDTO>> DeleteWorkoutPlanAsync(int id)
         {
             return await _workoutPlanService.DeleteWorkoutPlanAsync(id);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using courseworkBackend.Entities;
 using courseworkBackend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,6 +24,7 @@ namespace courseworkBackend.Controllers
 
         // GET: api/Workout
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<WorkoutModel>>> GetWorkouts()
         {
             return Ok(await _workoutService.GetWorkoutsAsync());
@@ -30,6 +32,7 @@ namespace courseworkBackend.Controllers
 
         // GET: api/Workout/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<WorkoutModel>> GetWorkout(int id)
         {
             var workout = await _workoutService.GetWorkoutByIdAsync(id);
@@ -44,6 +47,7 @@ namespace courseworkBackend.Controllers
 
         // POST: api/Workout
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<WorkoutModel>> PostWorkout([FromBody] WorkoutModel workout)
         {
             var createdWorkout = await _workoutService.CreateWorkoutAsync(workout);
@@ -54,6 +58,7 @@ namespace courseworkBackend.Controllers
 
         // PUT: api/Workout/5
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> PutWorkout(int id, [FromBody] WorkoutModel workout)
         {
             if (id != workout.Id)
@@ -76,6 +81,7 @@ namespace courseworkBackend.Controllers
 
         // DELETE: api/Workout/5
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteWorkout(int id)
         {
             var workout = await _workoutService.DeleteWorkoutAsync(id);

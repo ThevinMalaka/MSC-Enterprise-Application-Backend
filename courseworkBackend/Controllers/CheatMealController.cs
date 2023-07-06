@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Services;
 using courseworkBackend.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,6 +24,7 @@ namespace courseworkBackend.Controllers
 
         // GET: api/CheatMeals/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetCheatMealById(int id)
         {
             var cheatMeal = await _cheatMealService.GetCheatMealByIdAsync(id);
@@ -37,6 +39,7 @@ namespace courseworkBackend.Controllers
 
         // POST: api/CheatMeals
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<CheatMealModel>> CreateCheatMeal(CheatMealModel cheatMeal)
         {
             var createdCheatMeal = await _cheatMealService.CreateCheatMealAsync(cheatMeal);
@@ -45,6 +48,7 @@ namespace courseworkBackend.Controllers
 
         // PUT: api/CheatMeals/5
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateCheatMeal(int id, CheatMealModel cheatMeal)
         {
             if (id != cheatMeal.Id)
@@ -58,6 +62,7 @@ namespace courseworkBackend.Controllers
 
         // DELETE: api/CheatMeals/5
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteCheatMeal(int id)
         {
             var cheatMeal = await _cheatMealService.DeleteCheatMealAsync(id);
