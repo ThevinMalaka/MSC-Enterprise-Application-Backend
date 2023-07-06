@@ -63,12 +63,7 @@ namespace courseworkBackend.Services
         {
             return await _context.WorkoutPlans.FindAsync(id);
         }
-
-        // public async Task<WorkoutPlanModel> GetWorkoutPlanWithWorkoutsByIdAsync(int id)
-        // {
-		// 	return await _context.WorkoutPlans.Include(wp => wp.WorkoutPlanItems).ThenInclude(wpi => wpi.Workout).FirstOrDefaultAsync(wp => wp.Id == id);
-        // }
-
+		
 		public async Task<WorkoutPlanDTO> GetWorkoutPlanWithWorkoutsByIdAsync(int id)
 		{
 			var workoutPlanModel = await _context.WorkoutPlans.Include(wp => wp.WorkoutPlanItems).ThenInclude(wpi => wpi.Workout).FirstOrDefaultAsync(wp => wp.Id == id);
@@ -109,9 +104,6 @@ namespace courseworkBackend.Services
 
         public async Task<WorkoutPlanDTO> CreateWorkoutPlanAsync(WorkoutPlanModel workoutPlan)
         {
-            //_context.WorkoutPlans.Add(workoutPlan);
-            //await _context.SaveChangesAsync();
-            //return workoutPlan;
             _context.WorkoutPlans.Add(workoutPlan);
             await _context.SaveChangesAsync();
             return await GetWorkoutPlanWithWorkoutsByIdAsync(workoutPlan.Id); // refetch the created workoutPlan
@@ -119,9 +111,6 @@ namespace courseworkBackend.Services
 
         public async Task<WorkoutPlanDTO> UpdateWorkoutPlanAsync(WorkoutPlanModel workoutPlan)
         {
-            //_context.WorkoutPlans.Update(workoutPlan);
-            //await _context.SaveChangesAsync();
-            //return workoutPlan;
             _context.WorkoutPlans.Update(workoutPlan);
             await _context.SaveChangesAsync();
             return await GetWorkoutPlanWithWorkoutsByIdAsync(workoutPlan.Id); // refetch the updated workoutPlan
@@ -129,42 +118,12 @@ namespace courseworkBackend.Services
 
         public async Task<WorkoutPlanDTO> DeleteWorkoutPlanAsync(int id)
         {
-            //var workoutPlan = await _context.WorkoutPlans.FindAsync(id);
-            //_context.WorkoutPlans.Remove(workoutPlan);
-            //await _context.SaveChangesAsync();
-            //return workoutPlan;
             var workoutPlan = await _context.WorkoutPlans.FindAsync(id);
             var workoutPlanDto = await GetWorkoutPlanWithWorkoutsByIdAsync(id); // fetch the DTO before deleting
             _context.WorkoutPlans.Remove(workoutPlan);
             await _context.SaveChangesAsync();
             return workoutPlanDto; // return the DTO of the deleted item
         }
-
-
-
-
-		// // Get all workout plans
-		// public List<WorkoutPlanModel> GetAll()
-		// {
-		// 	List<WorkoutPlanModel> workoutPlans = _context.WorkoutPlans.ToList();
-		// 	return workoutPlans;
-		// }
-
-		// // Get a workout plan by ID
-		// public WorkoutPlanModel GetById(int id)
-		// {
-		// 	WorkoutPlanModel workoutPlan = _context.WorkoutPlans.FirstOrDefault(w => w.Id == id);
-		// 	return workoutPlan;
-		// }
-
-		// // Create a new workout plan
-		// public WorkoutPlanModel Create(WorkoutPlanModel workoutPlan)
-		// {
-		// 	_context.WorkoutPlans.Add(workoutPlan);
-		// 	_context.SaveChanges();
-
-		// 	return workoutPlan;
-		// }
 
 	}
 }

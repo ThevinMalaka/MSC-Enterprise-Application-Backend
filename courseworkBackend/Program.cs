@@ -40,6 +40,7 @@ builder.Services.AddScoped<CheatMealService>();
 builder.Services.AddScoped<WorkoutPlanService>();
 builder.Services.AddScoped<UserWeightService>();
 builder.Services.AddScoped<UserWorkoutEnrollmentService>();
+builder.Services.AddScoped<PredictionService>();
 
 
 // Get JWT Secret Key from Environment Variable
@@ -102,7 +103,7 @@ using (var scope = app.Services.CreateScope())
     if (!dbContext.Users.Any())
     {
         dbContext.Users.AddRange(
-            new UserModel { Id = 1, Name = "Thevin Malaka", Email = "thevinmalaka@gmail.com", Password = "aaa", CurrentHeight = 1.8, CurrentWeight = 80.0, DateOfBirth = new DateTime(1996, 12, 10) }
+            new UserModel { Id = 1, Name = "Thevin Malaka", Email = "thevinmalaka@gmail.com", Password = "aaa", Height = 156, Weight = 80.0, DateOfBirth = new DateTime(1996, 12, 10) }
         );
     }
 

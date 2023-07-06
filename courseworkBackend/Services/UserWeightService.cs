@@ -1,5 +1,6 @@
 ﻿using System;
 using courseworkBackend.DataStore;
+using courseworkBackend.DTO;
 using courseworkBackend.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,11 +29,21 @@ namespace courseworkBackend.Services
         }
 
 		// Create a weight log
-        public async Task<UserWeightModel> CreateWeightLogAsync(UserWeightModel weightLog)
+        public async Task<UserWeightModel> CreateWeightLogAsync(WeightLogCreationDTO weightLog)
         {
-            object value = _context.UserWeightsLogs.Add(weightLog);
+            // object value = _context.UserWeightsLogs.Add(weightLog);
+            // await _context.SaveChangesAsync();
+            // return weightLog;
+			var newWeightLog = new UserWeightModel
+            {
+                UserId = weightLog.UserId,
+                Weight = weightLog.Weight,
+                Date = weightLog.Date
+            };
+
+            object value = _context.UserWeightsLogs.Add(newWeightLog);
             await _context.SaveChangesAsync();
-            return weightLog;
+            return newWeightLog;
         }
 
 		// Update a weight log

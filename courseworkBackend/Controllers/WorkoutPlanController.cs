@@ -62,35 +62,6 @@ namespace courseworkBackend.Controllers
             return await _workoutPlanService.DeleteWorkoutPlanAsync(id);
         }
 
-        // // GET: api/WorkoutPlan
-        // [HttpGet]
-        // public IActionResult Get()
-        // {
-        //     var workoutPlans = _workoutPlanService.GetAll();
-        //     return Ok(workoutPlans);
-        // }
-
-        // // GET: api/WorkoutPlan/5
-        // [HttpGet("{id}")]
-        // public IActionResult Get(int id)
-        // {
-        //     var workoutPlan = _workoutPlanService.GetById(id);
-        //     if (workoutPlan == null)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return Ok(workoutPlan);
-        // }
-
-        // // POST: api/WorkoutPlan
-        // [HttpPost]
-        // public IActionResult Post([FromBody] WorkoutPlanModel workoutPlanModel)
-        // {
-        //     var createdWorkoutPlan = _workoutPlanService.Create(workoutPlanModel);
-        //     return CreatedAtAction(nameof(Get), new { id = createdWorkoutPlan.Id }, createdWorkoutPlan);
-        // }
-
     }
 }
 

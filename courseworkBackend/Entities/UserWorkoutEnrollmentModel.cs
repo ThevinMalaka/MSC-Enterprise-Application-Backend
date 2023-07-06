@@ -15,7 +15,6 @@ namespace courseworkBackend.Entities
         public int UserId { get; set; }
 		
 		[JsonIgnore]
-        //workout plan
         public WorkoutPlanModel WorkoutPlan { get; set; }
 
         [ForeignKey("WorkoutPlanModel")]

@@ -12,6 +12,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using courseworkBackend.Services;
+using courseworkBackend.DTO;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,6 +25,7 @@ namespace courseworkBackend.Controllers
     {
 
         private readonly FitnessDbContext _context;
+        private readonly UserWeightService _weightLogService;
 
         public UserController(FitnessDbContext context)
         {
@@ -31,10 +34,25 @@ namespace courseworkBackend.Controllers
 
         // Action to create a new user
         [HttpPost("create")]
-        public IActionResult Create([FromBody] UserModel user)
+        public async Task<IActionResult> CreateAsync([FromBody] UserModel user)
+        // public async Task<ActionResult<UserModel>> Post(UserModel user)
         {
             _context.Users.Add(user);
             _context.SaveChanges();
+            return Ok(user);  // Return the created user with the generated ID
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            //create a new weight log
+             var weightLogResult = await _weightLogService.CreateWeightLogAsync(
+                 new WeightLogCreationDTO
+                 {
+                     UserId = user.Id,
+                     Weight = user.Weight,
+                     Date = DateTime.Now
+                 }
+             );
 
             return Ok(user);  // Return the created user with the generated ID
         }

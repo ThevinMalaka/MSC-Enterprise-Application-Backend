@@ -16,10 +16,12 @@ namespace courseworkBackend.Controllers
     public class UserWorkoutEnrollmentController : ControllerBase
     {
         private readonly UserWorkoutEnrollmentService _userWorkoutEnrollmentService;
+        private readonly PredictionService _predictionService;
 
-        public UserWorkoutEnrollmentController(UserWorkoutEnrollmentService userWorkoutEnrollmentService)
+        public UserWorkoutEnrollmentController(PredictionService predictionService,UserWorkoutEnrollmentService userWorkoutEnrollmentService)
         {
             _userWorkoutEnrollmentService = userWorkoutEnrollmentService;
+            _predictionService = predictionService;
         }
 
 
@@ -41,9 +43,19 @@ namespace courseworkBackend.Controllers
         [HttpPost("single")]
         public async Task<ActionResult<UserWorkoutEnrollmentModel>> Post(UserWorkoutEnrollmentCreateDTO userWorkoutEnrollment)
         {
-           //create a new user workout enrollment
-           var result = await _userWorkoutEnrollmentService.CreateUserWorkoutEnrollmentAsync(userWorkoutEnrollment);
-           return result; 
+            //    //create a new user workout enrollment
+            //    var result = await _userWorkoutEnrollmentService.CreateUserWorkoutEnrollmentAsync(userWorkoutEnrollment);
+            //    return result; 
+
+            //create a new user workout enrollment
+            var result = await _userWorkoutEnrollmentService.CreateUserWorkoutEnrollmentAsync(userWorkoutEnrollment);
+            var userId = userWorkoutEnrollment.UserId;
+            // print out the user id
+            Console.WriteLine("User ID:--------------------- " + userId);
+
+            //create a new prediction
+            var predictionResult = await _predictionService.CreatePredictionAsync(userId);
+            return result; 
 
         }
 
