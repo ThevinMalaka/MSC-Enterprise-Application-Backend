@@ -50,29 +50,30 @@ namespace courseworkBackend.Services
                     throw new Exception("Weight is null in the current UserWeightsLog");
                 }
 
-                //workoutDays
+                //get workout days
                 var workoutDays = currentUserEnrollment.Days;
 
-                //predictionDate = current date + workoutDays
+                // get prediction date
                 var predictionDate = DateTime.Now.AddDays(workoutDays);
 
-                var avgDurationForWorkout = 20; //20mins
-                //calories burned
+                var avgDurationForWorkout = 20;
+
+                // calculate calories burned
                 var caloriesBurned = (currentWorkoutPlanMET * currentWeightValue * 3.5 * (avgDurationForWorkout * workoutDays)) / 200;
 
-                //weight loss
+                // calculate weight loss
                 var weightLoss = caloriesBurned / 7700;
 
-                //average calories gain 
+                // average calories gain
                 var avgCaloriesGain = 2000;
 
-                //avarage weight gain 
+                // average weight gain
                 var avgWeightGain = (avgCaloriesGain * workoutDays) / 7700;
 
-                //calculate predicted weight
-                var predictedWeight = currentWeightValue + avgWeightGain - weightLoss; // subtract weightLoss instead of adding it
+                // calculate predicted weight
+                var predictedWeight = currentWeightValue + avgWeightGain - weightLoss; // in kg
 
-                //create new prediction
+                // create new prediction
                 var newPrediction = new PredictionModel
                 {
                     UserId = userId,
