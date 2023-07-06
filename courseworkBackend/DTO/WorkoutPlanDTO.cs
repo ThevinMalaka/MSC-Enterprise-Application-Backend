@@ -7,7 +7,7 @@ namespace courseworkBackend.DTO
         public string Name { get; set; }
         public string Description { get; set; }
         public string Difficulty { get; set; }
-        public string Duration { get; set; }
+        public int Duration { get; set; }
         public double TotalMET { get; set; }
         public ICollection<WorkoutPlanItemDTO> WorkoutPlanItems { get; set; }
     }
