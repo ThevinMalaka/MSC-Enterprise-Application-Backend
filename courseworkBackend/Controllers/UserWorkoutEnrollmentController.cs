@@ -57,6 +57,16 @@ namespace courseworkBackend.Controllers
 
         }
 
+         //complete single day workout
+        [HttpPut("complete/{id}")]
+        public async Task<ActionResult<UserWorkoutEnrollmentModel>> CompleteDay(int id)
+        {
+            //complete a single day workout
+            var result = await _userWorkoutEnrollmentService.CompleteDayAsync(id);
+            return result; 
+            
+        }
+
         //-----------------
 
         // [HttpGet("{id}")]

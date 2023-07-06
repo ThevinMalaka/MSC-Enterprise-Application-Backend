@@ -57,6 +57,25 @@ namespace courseworkBackend.Services
             await _context.SaveChangesAsync();
             return existingUserWorkoutEnrollment;
         }
+
+        public async Task<UserWorkoutEnrollmentModel> CompleteDayAsync(int Id)
+        {
+            var existingUserWorkoutEnrollment = await _context.UserWorkoutEnrollments.FindAsync(Id);
+            // Check if the entity exists
+			if (existingUserWorkoutEnrollment == null)
+			{
+				// Throw an exception, return null, or handle this case as appropriate for your application
+				throw new Exception("UserWorkoutEnrollment not found.");
+			}
+			
+            // Update the properties of the existing user entity
+            existingUserWorkoutEnrollment.CompletedDays = existingUserWorkoutEnrollment.CompletedDays + 1;
+
+            _context.UserWorkoutEnrollments.Update(existingUserWorkoutEnrollment);
+            await _context.SaveChangesAsync();
+            return existingUserWorkoutEnrollment;
+        }
+
 	}
 }
 
