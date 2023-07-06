@@ -54,7 +54,6 @@ namespace courseworkBackend.Controllers
             return CreatedAtAction(nameof(Get), new { id = createdWorkoutPlan.Id }, createdWorkoutPlan);
         }
 
-        // More actions (PUT, DELETE) could be implemented here as per your needs...
     }
 }
 

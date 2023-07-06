@@ -23,10 +23,12 @@
     <None Remove="DataStore\" />
     <None Remove="Entities\" />
     <None Remove="Services\" />
+    <None Remove="DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataStore\" />
     <Folder Include="Entities\" />
     <Folder Include="Services\" />
+    <Folder Include="DTO\" />
   </ItemGroup>
 </Project>

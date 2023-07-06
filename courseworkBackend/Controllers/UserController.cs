@@ -41,7 +41,7 @@ namespace courseworkBackend.Controllers
 
         // Action to get all users
         [HttpGet("all")]
-        [Authorize]
+        // [Authorize]
         public IActionResult GetAll()
         {
             List<UserModel> users = _context.Users.ToList();

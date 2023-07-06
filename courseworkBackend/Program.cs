@@ -5,6 +5,8 @@ using courseworkBackend.DataStore;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using courseworkBackend.Entities;
+using courseworkBackend.Services;
+using API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +28,14 @@ builder.Services.AddCors(options =>
 // Add DbContext service
 builder.Services.AddDbContext<FitnessDbContext>(options =>
     options.UseInMemoryDatabase("FitnessDb"));
+
+// Add Services
+builder.Services.AddScoped<WorkoutService>();
+builder.Services.AddScoped<CheatMealService>();
+builder.Services.AddScoped<WorkoutPlanService>();
+builder.Services.AddScoped<UserWeightService>();
+builder.Services.AddScoped<UserWorkoutEnrollmentService>();
+
 
 // Get JWT Secret Key from Environment Variable
 string jwtSecret = "ThisIsMySuperSecretKeyForFitnessAppInMyMSCourseWork";
@@ -98,6 +108,26 @@ using (var scope = app.Services.CreateScope())
             new WorkoutPlanModel { Id = 2, Name = "Plan 2", Description = "Desc 2", Difficulty = "Intermediate", Duration = "45 min", MET = 6.5 },
             new WorkoutPlanModel { Id = 3, Name = "Plan 3", Description = "Desc 3", Difficulty = "Advanced", Duration = "60 min", MET = 7.5 },
             new WorkoutPlanModel { Id = 4, Name = "Plan 4", Description = "Desc 4", Difficulty = "Expert", Duration = "30 min", MET = 5.5 }
+        );
+    }
+
+    if (!dbContext.Workouts.Any())
+    {
+        dbContext.Workouts.AddRange(
+            new WorkoutModel { Id = 1, Name = "Workout 1", Description = "This is workout 1", MET = 4.0 },
+            new WorkoutModel { Id = 2, Name = "Workout 2", Description = "This is workout 2", MET = 5.0 },
+            new WorkoutModel { Id = 3, Name = "Workout 3", Description = "This is workout 3", MET = 6.0 },
+            new WorkoutModel { Id = 4, Name = "Workout 4", Description = "This is workout 4", MET = 7.0 }
+        );
+    }
+
+    if (!dbContext.CheatMeals.Any())
+    {
+        dbContext.CheatMeals.AddRange(
+            new CheatMealModel { Id = 1, Name = "Pizza", Calories = "285", Description = "Slice of large pizza" },
+            new CheatMealModel { Id = 2, Name = "Burger", Calories = "250", Description = "Cheeseburger" },
+            new CheatMealModel { Id = 3, Name = "Ice Cream", Calories = "137", Description = "Vanilla ice cream, 1 scoop" },
+            new CheatMealModel { Id = 4, Name = "Donut", Calories = "195", Description = "Glazed donut" }
         );
     }
 
