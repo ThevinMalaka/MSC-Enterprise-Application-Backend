@@ -7,11 +7,16 @@ using System.Text;
 using courseworkBackend.Entities;
 using courseworkBackend.Services;
 using API.Services;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+// builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = null);
+
 
 // Add CORS services.
 builder.Services.AddCors(options =>
@@ -104,10 +109,10 @@ using (var scope = app.Services.CreateScope())
     if (!dbContext.WorkoutPlans.Any())
     {
         dbContext.WorkoutPlans.AddRange(
-            new WorkoutPlanModel { Id = 1, Name = "Plan 1", Description = "Desc 1", Difficulty = "Beginner", Duration = "30 min", MET = 5.5 },
-            new WorkoutPlanModel { Id = 2, Name = "Plan 2", Description = "Desc 2", Difficulty = "Intermediate", Duration = "45 min", MET = 6.5 },
-            new WorkoutPlanModel { Id = 3, Name = "Plan 3", Description = "Desc 3", Difficulty = "Advanced", Duration = "60 min", MET = 7.5 },
-            new WorkoutPlanModel { Id = 4, Name = "Plan 4", Description = "Desc 4", Difficulty = "Expert", Duration = "30 min", MET = 5.5 }
+            new WorkoutPlanModel { Id = 1, Name = "Plan 1", Description = "Description 1", Difficulty = "Beginner", Duration = "30 Days", TotalMET = 5.5 },
+            new WorkoutPlanModel { Id = 2, Name = "Plan 2", Description = "Description 2", Difficulty = "Intermediate", Duration = "45 Days", TotalMET = 6.5 },
+            new WorkoutPlanModel { Id = 3, Name = "Plan 3", Description = "Description 3", Difficulty = "Advanced", Duration = "60 Days", TotalMET = 7.5 },
+            new WorkoutPlanModel { Id = 4, Name = "Plan 4", Description = "Description 4", Difficulty = "Expert", Duration = "30 Days", TotalMET = 8.5 }
         );
     }
 
@@ -121,13 +126,35 @@ using (var scope = app.Services.CreateScope())
         );
     }
 
+     if (!dbContext.WorkoutPlanItems.Any())
+    {
+        dbContext.WorkoutPlanItems.AddRange(
+            new WorkoutPlanItemsModel { Id = 1, WorkoutPlanId = 1, WorkoutId = 1, Order = 1, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 2, WorkoutPlanId = 1, WorkoutId = 2, Order = 2, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 3, WorkoutPlanId = 1, WorkoutId = 3, Order = 3, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 4, WorkoutPlanId = 1, WorkoutId = 4, Order = 4, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 5, WorkoutPlanId = 2, WorkoutId = 1, Order = 1, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 6, WorkoutPlanId = 2, WorkoutId = 2, Order = 2, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 7, WorkoutPlanId = 2, WorkoutId = 3, Order = 3, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 8, WorkoutPlanId = 2, WorkoutId = 4, Order = 4, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 9, WorkoutPlanId = 3, WorkoutId = 1, Order = 1, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 10, WorkoutPlanId = 3, WorkoutId = 2, Order = 2, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 11, WorkoutPlanId = 3, WorkoutId = 3, Order = 3, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 12, WorkoutPlanId = 3, WorkoutId = 4, Order = 4, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 13, WorkoutPlanId = 4, WorkoutId = 1, Order = 1, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 14, WorkoutPlanId = 4, WorkoutId = 2, Order = 2, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 15, WorkoutPlanId = 4, WorkoutId = 3, Order = 3, Sets = 3, Reps = 10, Rest = 60 },
+            new WorkoutPlanItemsModel { Id = 16, WorkoutPlanId = 4, WorkoutId = 4, Order = 4, Sets = 3, Reps = 10, Rest = 60 }
+        );
+    }
+
     if (!dbContext.CheatMeals.Any())
     {
         dbContext.CheatMeals.AddRange(
-            new CheatMealModel { Id = 1, Name = "Pizza", Calories = "285", Description = "Slice of large pizza" },
-            new CheatMealModel { Id = 2, Name = "Burger", Calories = "250", Description = "Cheeseburger" },
-            new CheatMealModel { Id = 3, Name = "Ice Cream", Calories = "137", Description = "Vanilla ice cream, 1 scoop" },
-            new CheatMealModel { Id = 4, Name = "Donut", Calories = "195", Description = "Glazed donut" }
+            new CheatMealModel { Id = 1, Name = "Pizza", Calories = "285", Description = "Slice of large pizza", Type = "Dinner"  },
+            new CheatMealModel { Id = 2, Name = "Burger", Calories = "250", Description = "Cheeseburger", Type = "Lunch" },
+            new CheatMealModel { Id = 3, Name = "Ice Cream", Calories = "137", Description = "Vanilla ice cream, 1 scoop", Type = "Lunch" },
+            new CheatMealModel { Id = 4, Name = "Donut", Calories = "195", Description = "Glazed donut", Type = "Breakfast" }
         );
     }
 

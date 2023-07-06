@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace courseworkBackend.Entities
 {
@@ -10,13 +11,14 @@ namespace courseworkBackend.Entities
         public DateTime Date { get; set; }
         public UserModel User { get; set; }
 
-        [ForeignKey("User")]
+        [ForeignKey("UserModel")]
         public int UserId { get; set; }
-
+		
+		[JsonIgnore]
         //workout plan
         public WorkoutPlanModel WorkoutPlan { get; set; }
 
-        [ForeignKey("WorkoutPlan")]
+        [ForeignKey("WorkoutPlanModel")]
         public int WorkoutPlanId { get; set; }
         public int Days { get; set; }
         public int CompletedDays { get; set; }

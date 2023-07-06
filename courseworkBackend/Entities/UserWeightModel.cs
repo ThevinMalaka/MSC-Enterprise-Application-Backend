@@ -10,7 +10,7 @@ namespace courseworkBackend.Entities
         public double Weight { get; set; }
         public UserModel User { get; set; }
 
-        [ForeignKey("User")]
+        [ForeignKey("UserModel")]
         public int UserId { get; set; }
 	}
 }

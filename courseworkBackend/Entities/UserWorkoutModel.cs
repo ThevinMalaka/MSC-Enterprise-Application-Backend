@@ -10,10 +10,10 @@ namespace courseworkBackend.Entities
         public WorkoutModel Workout { get; set; }
         public UserModel User { get; set; }
 
-        [ForeignKey("Workout")]
+        [ForeignKey("WorkoutModel")]
         public int WorkoutId { get; set; }
 
-        [ForeignKey("User")]
+        [ForeignKey("UserModel")]
         public int UserId { get; set; }
 
         public DateOnly Date { get; set; }

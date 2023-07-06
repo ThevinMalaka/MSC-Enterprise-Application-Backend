@@ -14,34 +14,34 @@ namespace courseworkBackend.Services
             _context = context;
         }
 
-        public async Task<List<WorkoutModel>> GetWorkoutsAsync()
+        public async Task<List<UserWorkoutModel>> GetWorkoutsAsync()
         {
-            return await _context.Workouts.ToListAsync();
+            return await _context.UserWorkout.ToListAsync();
         }
 
-        public async Task<WorkoutModel> GetWorkoutByIdAsync(int id)
+        public async Task<UserWorkoutModel> GetWorkoutByIdAsync(int id)
         {
-            return await _context.Workouts.FindAsync(id);
+            return await _context.UserWorkout.FindAsync(id);
         }
 
-        public async Task<WorkoutModel> CreateWorkoutAsync(WorkoutModel workout)
+        public async Task<UserWorkoutModel> CreateWorkoutAsync(UserWorkoutModel workout)
         {
-            _context.Workouts.Add(workout);
+            _context.UserWorkout.Add(workout);
             await _context.SaveChangesAsync();
             return workout;
         }
 
-        public async Task<WorkoutModel> UpdateWorkoutAsync(WorkoutModel workout)
+        public async Task<UserWorkoutModel> UpdateWorkoutAsync(UserWorkoutModel workout)
         {
-            _context.Workouts.Update(workout);
+            _context.UserWorkout.Update(workout);
             await _context.SaveChangesAsync();
             return workout;
         }
 
-        public async Task<WorkoutModel> DeleteWorkoutAsync(int id)
+        public async Task<UserWorkoutModel> DeleteWorkoutAsync(int id)
         {
-            var workout = await _context.Workouts.FindAsync(id);
-            _context.Workouts.Remove(workout);
+            var workout = await _context.UserWorkout.FindAsync(id);
+            _context.UserWorkout.Remove(workout);
             await _context.SaveChangesAsync();
             return workout;
         }

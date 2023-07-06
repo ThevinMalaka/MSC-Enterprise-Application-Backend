@@ -17,6 +17,9 @@ namespace courseworkBackend.DataStore
         public DbSet<WorkoutModel> Workouts { get; set; }
         public DbSet<UserWeightModel> UserWeightsLogs { get; set; }
         public DbSet<UserWorkoutEnrollmentModel> UserWorkoutEnrollments { get; set; }
+        public DbSet<UserWorkoutModel> UserWorkout { get; set; }
+        public DbSet<PredictionModel> Predictions { get; set; }
+        public DbSet<WorkoutPlanItemsModel> WorkoutPlanItems { get; set; }
         
     }
 }

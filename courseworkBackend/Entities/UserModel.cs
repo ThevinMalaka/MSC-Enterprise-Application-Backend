@@ -10,6 +10,13 @@ namespace courseworkBackend.Entities
         public double CurrentHeight { get; set; }
         public double CurrentWeight { get; set; }
         public DateTime DateOfBirth { get; set; }
+
+        public ICollection<UserWorkoutModel> UserWorkout { get; set; }
+        public ICollection<UserWeightModel> WeightLog { get; set; }
+        public ICollection<PredictionModel> Prediction { get; set; }
+        public ICollection<UserWorkoutEnrollmentModel> UserWorkoutEnrollment { get; set; }
+    
+
     }
 
     public class UserLoginModel

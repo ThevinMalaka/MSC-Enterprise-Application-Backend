@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using courseworkBackend.DataStore;
+using courseworkBackend.DTO;
 using courseworkBackend.Entities;
 using courseworkBackend.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -25,34 +26,70 @@ namespace courseworkBackend.Controllers
             _workoutPlanService = new WorkoutPlanService(context);
         }
 
-        // GET: api/WorkoutPlan
+
         [HttpGet]
-        public IActionResult Get()
+        public async Task<ActionResult<List<WorkoutPlanDTO>>> GetWorkoutPlansAsync()
         {
-            var workoutPlans = _workoutPlanService.GetAll();
-            return Ok(workoutPlans);
+            return await _workoutPlanService.GetWorkoutPlansAsync();
         }
 
-        // GET: api/WorkoutPlan/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<ActionResult<WorkoutPlanDTO>> GetWorkoutPlanByIdAsync(int id)
         {
-            var workoutPlan = _workoutPlanService.GetById(id);
-            if (workoutPlan == null)
+            return await _workoutPlanService.GetWorkoutPlanWithWorkoutsByIdAsync(id);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<WorkoutPlanDTO>> CreateWorkoutPlanAsync(WorkoutPlanModel workoutPlan)
+        {
+            return await _workoutPlanService.CreateWorkoutPlanAsync(workoutPlan);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<WorkoutPlanDTO>> UpdateWorkoutPlanAsync(int id, WorkoutPlanModel workoutPlan)
+        {
+            if (id != workoutPlan.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            return Ok(workoutPlan);
+            return await _workoutPlanService.UpdateWorkoutPlanAsync(workoutPlan);
         }
 
-        // POST: api/WorkoutPlan
-        [HttpPost]
-        public IActionResult Post([FromBody] WorkoutPlanModel workoutPlanModel)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<WorkoutPlanDTO>> DeleteWorkoutPlanAsync(int id)
         {
-            var createdWorkoutPlan = _workoutPlanService.Create(workoutPlanModel);
-            return CreatedAtAction(nameof(Get), new { id = createdWorkoutPlan.Id }, createdWorkoutPlan);
+            return await _workoutPlanService.DeleteWorkoutPlanAsync(id);
         }
+
+        // // GET: api/WorkoutPlan
+        // [HttpGet]
+        // public IActionResult Get()
+        // {
+        //     var workoutPlans = _workoutPlanService.GetAll();
+        //     return Ok(workoutPlans);
+        // }
+
+        // // GET: api/WorkoutPlan/5
+        // [HttpGet("{id}")]
+        // public IActionResult Get(int id)
+        // {
+        //     var workoutPlan = _workoutPlanService.GetById(id);
+        //     if (workoutPlan == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return Ok(workoutPlan);
+        // }
+
+        // // POST: api/WorkoutPlan
+        // [HttpPost]
+        // public IActionResult Post([FromBody] WorkoutPlanModel workoutPlanModel)
+        // {
+        //     var createdWorkoutPlan = _workoutPlanService.Create(workoutPlanModel);
+        //     return CreatedAtAction(nameof(Get), new { id = createdWorkoutPlan.Id }, createdWorkoutPlan);
+        // }
 
     }
 }
