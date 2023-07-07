@@ -38,6 +38,7 @@ builder.Services.AddScoped<WorkoutPlanService>();
 builder.Services.AddScoped<UserWeightService>();
 builder.Services.AddScoped<UserWorkoutEnrollmentService>();
 builder.Services.AddScoped<PredictionService>();
+builder.Services.AddScoped<ReportService>();
 
 
 // Get JWT Secret Key from Environment Variable
