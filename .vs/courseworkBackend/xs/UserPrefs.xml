@@ -1,34 +1,81 @@
 ﻿<Properties StartupConfiguration="{246832E7-1215-4A13-B250-3FCF3F0512F4}|https">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.courseworkBackend PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkBackend/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="courseworkApiGateway/ocelot.json">
     <Files>
-      <File FileName="courseworkBackend/DataStore/FitnessDbContext.cs" Line="16" Column="1" />
-      <File FileName="courseworkBackend/Entities/UserModel.cs" Line="4" Column="24" />
-      <File FileName="courseworkBackend/Controllers/UserController.cs" Line="44" Column="13" />
-      <File FileName="courseworkBackend/Program.cs" Line="102" Column="6" />
-      <File FileName="courseworkBackend/Entities/WorkoutPlanModel.cs" Line="4" Column="31" />
-      <File FileName="courseworkBackend/Services/WorkoutPlanService.cs" Line="7" Column="33" />
-      <File FileName="courseworkBackend/Controllers/WorkoutPlanController.cs" Line="14" Column="2" />
+      <File FileName="courseworkBackend/DataStore/FitnessDbContext.cs" />
+      <File FileName="courseworkBackend/Entities/UserModel.cs" />
+      <File FileName="courseworkBackend/Program.cs" />
+      <File FileName="courseworkBackend/Entities/WorkoutPlanModel.cs" />
+      <File FileName="courseworkBackend/Services/WorkoutPlanService.cs" />
+      <File FileName="courseworkBackend/Controllers/WorkoutPlanController.cs" />
+      <File FileName="courseworkBackend/Entities/WorkoutPlanItemsModel.cs" />
+      <File FileName="courseworkBackend/Entities/CheatMealModel.cs" />
+      <File FileName="courseworkBackend/Entities/PredictionModel.cs" />
+      <File FileName="courseworkBackend/Entities/UserWorkoutModel.cs" />
+      <File FileName="courseworkBackend/Entities/UserWorkoutEnrollmentModel.cs" />
+      <File FileName="courseworkBackend/Entities/WorkoutModel.cs" />
+      <File FileName="courseworkBackend/Entities/UserWeightModel.cs" />
+      <File FileName="courseworkBackend/Services/CheatMealService.cs" />
+      <File FileName="courseworkBackend/Controllers/CheatMealController.cs" />
+      <File FileName="courseworkBackend/Controllers/WorkoutController.cs" />
+      <File FileName="courseworkBackend/Services/WorkoutService.cs" />
+      <File FileName="courseworkBackend/Services/UserWorkoutEnrollmentService.cs" />
+      <File FileName="courseworkBackend/Services/UserWorkoutService.cs" />
+      <File FileName="courseworkBackend/Controllers/UserWorkoutEnrollmentController.cs" />
+      <File FileName="courseworkBackend/DTO/WorkoutUpdateDTO.cs" />
+      <File FileName="courseworkBackend/DTO/UserWorkoutEnrollmentCreateDTO.cs" />
+      <File FileName="courseworkBackend/DTO/UserWorkoutEnrollmentUpdateDTO.cs" />
+      <File FileName="courseworkBackend/DTO/WorkoutCreationDTO.cs" />
+      <File FileName="courseworkBackend/DTO/WorkoutDTO.cs" />
+      <File FileName="courseworkBackend/DTO/WorkoutPlanItemDTO.cs" />
+      <File FileName="courseworkBackend/DTO/WorkoutPlanDTO.cs" />
+      <File FileName="courseworkBackend/appsettings.json" />
+      <File FileName="courseworkBackend/Controllers/PredictionController.cs" />
+      <File FileName="courseworkBackend/Services/PredictionService.cs" />
+      <File FileName="courseworkBackend/DTO/WeightLogCreationDTO.cs" />
+      <File FileName="courseworkBackend/Controllers/UserController.cs" />
+      <File FileName="courseworkBackend/Services/UserWeightService.cs" />
+      <File FileName="courseworkBackend/Controllers/UserWeightController.cs" />
+      <File FileName="courseworkBackend/DTO/ReportDTO.cs" />
+      <File FileName="courseworkBackend/Services/ReportService.cs" />
+      <File FileName="courseworkBackend/Controllers/ReportController.cs" />
+      <File FileName="courseworkApiGateway/Program.cs" Line="32" Column="1" />
+      <File FileName="courseworkApiGateway/ocelot.json" Line="29" Column="34" />
+      <File FileName="userLoginService/Controllers/WeatherForecastController.cs" />
+      <File FileName="courseworkApiGateway/WeatherForecast.cs" Line="1" Column="1" />
+      <File FileName="userLoginService/appsettings.json" />
+      <File FileName="userLoginService/Program.cs" Line="27" Column="1" />
+      <File FileName="courseworkApiGateway/appsettings.json" Line="1" Column="1" />
+      <File FileName="courseworkApiGateway/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="courseworkBackend" expanded="True">
+          <Node name="courseworkBackend" expanded="True" selected="True">
+            <Node name="courseworkApiGateway" expanded="True" />
             <Node name="courseworkBackend" expanded="True">
-              <Node name="Controllers" expanded="True" />
               <Node name="DataStore" expanded="True" />
-              <Node name="Entities" expanded="True" />
-              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="userLoginService" expanded="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Run All " Name="Run All ">
+      <Items>
+        <StartupItem ItemId="{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}" ItemName="courseworkApiGateway" ConfigurationId="https" />
+        <StartupItem ItemId="{246832E7-1215-4A13-B250-3FCF3F0512F4}" ItemName="courseworkBackend" ConfigurationId="https" />
+        <StartupItem ItemId="{F64F46E9-F704-4C24-949E-52B8F23F7836}" ItemName="userLoginService" ConfigurationId="https" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

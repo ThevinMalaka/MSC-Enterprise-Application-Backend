@@ -5,6 +5,10 @@ VisualStudioVersion = 25.0.1705.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseworkBackend", "courseworkBackend\courseworkBackend.csproj", "{246832E7-1215-4A13-B250-3FCF3F0512F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "userLoginService", "userLoginService\userLoginService.csproj", "{F64F46E9-F704-4C24-949E-52B8F23F7836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "courseworkApiGateway", "courseworkApiGateway\courseworkApiGateway.csproj", "{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{246832E7-1215-4A13-B250-3FCF3F0512F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{246832E7-1215-4A13-B250-3FCF3F0512F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{246832E7-1215-4A13-B250-3FCF3F0512F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64F46E9-F704-4C24-949E-52B8F23F7836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64F46E9-F704-4C24-949E-52B8F23F7836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64F46E9-F704-4C24-949E-52B8F23F7836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64F46E9-F704-4C24-949E-52B8F23F7836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E83E12-1B0B-4F2A-BEE9-26E77ECD28EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

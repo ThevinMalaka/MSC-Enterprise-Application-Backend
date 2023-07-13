@@ -1809,11 +1809,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
+      "projectUniqueName": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW2/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
       "projectName": "courseworkBackend",
-      "projectPath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
+      "projectPath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW2/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
       "packagesPath": "/Users/thevinm/.nuget/packages/",
-      "outputPath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/obj/",
+      "outputPath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW2/projects/courseworkBackend/courseworkBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/thevinm/.nuget/NuGet/NuGet.Config"

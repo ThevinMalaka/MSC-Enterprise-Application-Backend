@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+dmflf7MmHQnhABP+kani26d+Vk5f5Zurt4HYdU05SW6DIwtn7EDPMf1YHAtAr5wVR4+dniOTAH/ZGvMeOC6ag==",
+  "dgSpecHash": "ggsF1mmdfAhoz9+3ayTmrTVBhSc4N6WtkHVAM5B9ENvcp3vZYz+AuCb+IVDkSdJzRgHR/0VEO9yW9YLLzG0ibA==",
   "success": true,
-  "projectFilePath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW1/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
+  "projectFilePath": "/Users/thevinm/Documents/Thevin/MSC-Course-Work/5. Enterprise Application Development - 7SENG001C.3 /CW2/projects/courseworkBackend/courseworkBackend/courseworkBackend.csproj",
   "expectedPackageFiles": [
     "/Users/thevinm/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/thevinm/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.8/microsoft.aspnetcore.authentication.jwtbearer.7.0.8.nupkg.sha512",
