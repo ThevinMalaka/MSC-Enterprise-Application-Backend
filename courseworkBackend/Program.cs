@@ -125,7 +125,7 @@ using (var scope = app.Services.CreateScope())
         );
     }
 
-     if (!dbContext.WorkoutPlanItems.Any())
+    if (!dbContext.WorkoutPlanItems.Any())
     {
         dbContext.WorkoutPlanItems.AddRange(
             new WorkoutPlanItemsModel { Id = 1, WorkoutPlanId = 1, WorkoutId = 1, Order = 1, Sets = 3, Reps = 10, Rest = 60 },
@@ -150,7 +150,7 @@ using (var scope = app.Services.CreateScope())
     if (!dbContext.CheatMeals.Any())
     {
         dbContext.CheatMeals.AddRange(
-            new CheatMealModel { Id = 1, Name = "Pizza", Calories = "285", Description = "Slice of large pizza", Type = "Dinner"  },
+            new CheatMealModel { Id = 1, Name = "Pizza", Calories = "285", Description = "Slice of large pizza", Type = "Dinner" },
             new CheatMealModel { Id = 2, Name = "Burger", Calories = "250", Description = "Cheeseburger", Type = "Lunch" },
             new CheatMealModel { Id = 3, Name = "Ice Cream", Calories = "137", Description = "Vanilla ice cream, 1 scoop", Type = "Lunch" },
             new CheatMealModel { Id = 4, Name = "Donut", Calories = "195", Description = "Glazed donut", Type = "Breakfast" }
@@ -159,7 +159,7 @@ using (var scope = app.Services.CreateScope())
 
     dbContext.SaveChanges();
 }
-// --------------------------------------------------------
+// ---------------------------------------------------------
 
 
 // Configure the HTTP request pipeline.
